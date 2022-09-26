@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option go_package = "github.com/vulpes-ferrilata/authentication-service-proto/pb";
+
+package pb;
+
+import "protobuf/requests/get_token_by_claim_id.proto";
+import "protobuf/requests/get_claim_by_access_token.proto";
+import "protobuf/requests/get_token_by_refresh_token.proto";
+import "protobuf/requests/create_user_credential.proto";
+import "protobuf/requests/delete_user_credential.proto";
+import "protobuf/requests/login.proto";
+import "protobuf/requests/revoke_token.proto";
+
+import "protobuf/responses/token.proto";
+import "protobuf/responses/claim.proto";
+import "google/protobuf/empty.proto";
+
+service Authentication {
+    rpc GetTokenByClaimID(requests.GetTokenByClaimID) returns (responses.Token) {}
+    rpc GetClaimByAccessToken(requests.GetClaimByAccessToken) returns (responses.Claim) {}
+    rpc GetTokenByRefreshToken(requests.GetTokenByRefreshToken) returns (responses.Token) {}
+
+    rpc CreateUserCredential(requests.CreateUserCredential) returns (google.protobuf.Empty) {}
+    rpc DeleteUserCredential(requests.DeleteUserCredential) returns (google.protobuf.Empty) {}
+    rpc Login(requests.Login) returns (google.protobuf.Empty) {}
+    rpc RevokeToken(requests.RevokeToken) returns (google.protobuf.Empty) {}
+}
