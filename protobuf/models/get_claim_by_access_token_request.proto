@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option go_package = "github.com/vulpes-ferrilata/authentication-service-proto/pb/models";
+
+package models;
+
+message GetClaimByAccessTokenRequest {
+    string AccessToken = 1;
+}

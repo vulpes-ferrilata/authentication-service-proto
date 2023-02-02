@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option go_package = "github.com/vulpes-ferrilata/authentication-service-proto/pb/models";
+
+package models;
+
+message Token {
+    string AccessToken = 1;
+    string RefreshToken = 2;
+}

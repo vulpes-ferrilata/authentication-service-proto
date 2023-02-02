@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option go_package = "github.com/vulpes-ferrilata/authentication-service-proto/pb/models";
+
+package models;
+
+message Claim {
+    string ID = 1;
+    string UserID = 2;
+}
